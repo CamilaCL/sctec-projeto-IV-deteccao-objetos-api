@@ -325,6 +325,22 @@ Endpoints disponíveis:
 - `GET /health`: verifica o status da API e informa o modelo carregado;
 - `POST /detect`: recebe uma imagem e retorna as detecções encontradas.
 
+### Configuração no Postman/Insomnia
+
+Com a API em execução, configure uma nova requisição:
+
+1. Selecione o método `POST`.
+2. Informe a URL `http://127.0.0.1:8000/detect`.
+3. Acesse a aba **Body** e selecione **form-data**.
+4. Adicione uma chave chamada `file`.
+5. Altere o tipo da chave de **Text** para **File**.
+6. Selecione uma imagem de exercício no computador.
+7. Clique em **Send**.
+
+O Postman enviará a imagem como `multipart/form-data` e a API retornará as
+detecções em formato JSON. Não é necessário configurar manualmente o header
+`Content-Type`; o Postman o preencherá automaticamente.
+
 Exemplo de resposta do endpoint `POST /detect`:
 
 ```json
